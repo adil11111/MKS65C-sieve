@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sieve.h"
+#include <time.h>
 
 int main(int argc, char * argv[]){
-  int iterations = 5;
-  int target = 10;
+  //clock_t begin = clock();
+  int iterations = 10;
+  int target = 1500000;
   if(argc > 1){
     target = atoi(argv[1]);
   }
@@ -23,5 +25,8 @@ int main(int argc, char * argv[]){
       //potentially avoid CPU caching
       target++;
   }
+  //clock_t end = clock();
+  //double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+  //printf("%lf\n",time_spent);
   return 0;
 }
